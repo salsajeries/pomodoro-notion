@@ -1,3 +1,8 @@
+body {
+    background-color: #362422;
+    color: #d5514f;
+}
+
 #pomodoro {
     display: block;
     margin: 0;
