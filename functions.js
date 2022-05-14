@@ -29,11 +29,36 @@ var x = setInterval(function() {
 
 
 
-function get_start_time() {
-  var now = new Date();
-  var hours = now.getHours();
-  var minutes = now.getMinutes();
-  var seconds = now.getSeconds();
+function activate_timer() {
 
-  document.getElementById("timertest").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+  var time = 1500000;
+  while (time != 0)
+  {
+    setInterval(update_timer, 1000, time);
+  }
 }
+
+
+function update_timer(time) {
+
+  if (time >= 0)
+  {
+    var minutes = Math.floor(time / 1000 / 60);
+    var seconds = Math.floor((time / 1000) % 60);
+
+    document.getElementById("timertest").innerHTML = minutes + "m " + seconds + "s ";
+    time -= 1000;
+  }  
+
+  return time;
+}
+
+
+function get_end_time() {
+
+  var now = new Date();
+  var hrs = 
+
+}
+
+
