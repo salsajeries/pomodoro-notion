@@ -11,8 +11,10 @@
 
     <body>
 
+        <!-- MAIN CONTENT -->
         <div id="mainContent">
 
+          <!-- POMODORO TIMER CAROUSEL -->
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" data-bs-interval="false">
             
             <div class="carousel-indicators">
@@ -46,29 +48,38 @@
 
           <br><hr><br>
 
-          <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
-            Task List
-          </button>
-
-          <br><br>
-          
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 25%;" sass=""></div>
+          <!-- MISC OPTIONS -->
+          <div id="miscOptions">
+            <!-- Task List Button -->
+            <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
+              Task List
+            </button>
+            <br><br>
+            <!-- Progress Bar -->
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 25%;" sass="">
+                0%
+              </div>
+            </div>
           </div>
-
+          
         </div>
 
 
+        <!-- OFFCANVAS CONTENT -->
         <div class="offcanvas offcanvas-start" id="taskList">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="taskListHeader">Current Tasks:</h5>
-              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <div>
-                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-              </div>  
-            </div>
+            
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="taskListHeader">Current Tasks:</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          
+          <div class="offcanvas-body">
+            <div>
+              Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+            </div>  
+          </div>
+
         </div>
 
         
@@ -99,6 +110,5 @@
         </script>
 
     </body>
-
 
 </html>
