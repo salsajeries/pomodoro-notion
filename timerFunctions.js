@@ -1,12 +1,19 @@
-var time = 60;
+var time;
+var myInterval;
+var elemID;
 
-function activate_timer() {
-  const myInterval = setInterval(update_timer, 1000);
+function activate_timer(numSec) {
+  reset_timer(elemID);
+  
+  time = numSec;
+  elemID = numSec.toString();
+
+  myInterval = setInterval(update_timer, 1000);
 }
 
 function update_timer() {
-  
-  const timerElement = document.getElementById("timer");
+
+  const timerElement = document.getElementById(elemID);
   
   if (time >= 0) {
     var min = Math.floor( (time / 60) % 60 );
@@ -29,4 +36,13 @@ function update_timer() {
 
 function stop_timer() {
   clearInterval(myInterval);
+}
+
+function reset_timer(elemID) {
+  stop_timer();
+
+  if (elemID == "1500")
+    document.getElementById(elemID).innerHTML = "25:00";
+  else if (elemID == "300")
+    document.getElementById(elemID).innerHTML = "05:00";
 }

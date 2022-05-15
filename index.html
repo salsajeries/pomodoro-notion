@@ -10,16 +10,37 @@
     </head>
 
     <body>
-
         <div id="pomodoro">
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
-                Task List
+
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            
+            <div class="carousel-inner" style="width: 500px">
+              <div class="carousel-item active">
+                <p class="d-block w-100">25 Min Timer</p>
+                <button onclick="activate_timer(1500)">Start</button>
+                <p id="1500">25:00</p>
+              </div>
+              <div class="carousel-item">
+                <p class="d-block w-100">5 Min Timer</p>
+                <button onclick="activate_timer(300)">Start</button>
+                <p id="300">05:00</p>
+              </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
             </button>
-            <button onclick="activate_timer()">Test Button</button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
 
-            <p id="timer"></p>
+          </div>
 
-            <p id="timertest"></p>
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
+            Task List
+          </button>
 
         </div>
 
