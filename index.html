@@ -10,39 +10,54 @@
     </head>
 
     <body>
-        <div id="pomodoro">
 
-          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div id="mainContent">
+
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" data-bs-interval="false">
             
-            <div class="carousel-inner" style="width: 500px">
-              <div class="carousel-item active">
-                <p class="d-block w-100">25 Min Timer</p>
-                <button onclick="activate_timer(1500)">Start</button>
-                <p id="1500">25:00</p>
-              </div>
-              <div class="carousel-item">
-                <p class="d-block w-100">5 Min Timer</p>
-                <button onclick="activate_timer(300)">Start</button>
-                <p id="300">05:00</p>
-              </div>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <h1>Pomodoro</h1>
+                <h5 id="1500">25:00</h5>
+                <button type="button" class="btn btn-outline-danger" onclick="activate_timer(1500)">Start</button>
+                <br><br><br>
+              </div>
+              <div class="carousel-item">
+                <h1>Short Break</h1>
+                <h5 id="300">05:00</h5>
+                <button type="button" class="btn btn-outline-danger" onclick="activate_timer(300)">Start</button>
+                <br><br><br>
+              </div>
+              <div class="carousel-item">
+                <h1>Long Break</h1>
+                <h5 id="900">15:00</h5>
+                <button type="button" class="btn btn-outline-danger" onclick="activate_timer(900)">Start</button>
+                <br><br><br>
+              </div>
+            </div>
 
           </div>
 
-          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
+          <br><hr><br>
+
+          <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
             Task List
           </button>
 
+          <br><br>
+          
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 25%;" sass=""></div>
+          </div>
+
         </div>
+
 
         <div class="offcanvas offcanvas-start" id="taskList">
             <div class="offcanvas-header">

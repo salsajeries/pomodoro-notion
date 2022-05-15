@@ -3,8 +3,9 @@ body {
     color: #d5514f;
 }
 
-#pomodoro {
+#mainContent {
     display: block;
+    width: 75%;
     margin: 0;
     position: absolute;
     top: 50%;
