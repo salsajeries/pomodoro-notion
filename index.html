@@ -21,21 +21,25 @@
             
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <h1>Pomodoro</h1>
-                <h5 id="1500">25:00</h5>
-                <button type="button" class="btn btn-outline-danger" id="25minButton" onclick="activate_timer(1500)">Start</button>
+                <h3>Pomodoro</h3>
+                <h1 id="1500">25:00</h1>
+                <div>
+                  <button type="button" class="btn btn-outline-danger" id="1500start" onclick="toggle_timer(1500)">Start</button>
+                  <button type="button" class="btn btn-outline-danger" id="1500pause" onclick="stop_timer()" style="display: none;">Pause</button>
+                </div>
+                
                 <br><br><br>
               </div>
               <div class="carousel-item">
-                <h1>Short Break</h1>
-                <h5 id="300">05:00</h5>
-                <button type="button" class="btn btn-outline-danger" id="5minButton" onclick="activate_timer(300)">Start</button>
+                <h3>Short Break</h3>
+                <h1 id="300">05:00</h1>
+                <button type="button" class="btn btn-outline-danger" id="300start" onclick="activate_timer(300)">Start</button>
                 <br><br><br>
               </div>
               <div class="carousel-item">
-                <h1>Long Break</h1>
-                <h5 id="900">15:00</h5>
-                <button type="button" class="btn btn-outline-danger" id="15minButton" onclick="activate_timer(900)">Start</button>
+                <h3>Long Break</h3>
+                <h1 id="900">15:00</h1>
+                <button type="button" class="btn btn-outline-danger" id="900start" onclick="activate_timer(900)">Start</button>
                 <br><br><br>
               </div>
             </div>

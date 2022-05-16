@@ -1,11 +1,12 @@
 /* GLOBAL VARIABLES */
-var time;               // Time in seconds
+var time = null;               // Time in seconds
 var myInterval;         // setInterval variable
 var elemID;             // ID of timer element
 
 
 /* ACTIVATE TIMER WITH SPECIFIED TIME */
 function activate_timer(numSec) {
+
   reset_timer(elemID);    // Reset previous timer
   
   time = numSec;                // Set new time
@@ -34,9 +35,8 @@ function update_timer() {
 
     time -= 1;  // Decrement seconds
   }
-  else {
+  else
     stop_timer();
-  }
 }
 
 
@@ -55,4 +55,27 @@ function reset_timer(elemID) {
     document.getElementById(elemID).innerHTML = "25:00";
   else if (elemID == "300")
     document.getElementById(elemID).innerHTML = "05:00";
+}
+
+
+function toggle_timer(startTime) {
+  
+  var id = startTime.toString();
+  var startID = id + "start";
+  var pauseID = id + "pause";
+
+  if (startTime != time && time != null)      // If timer needs to be stopped and reset
+  {
+    reset_timer(id);  // Reset and stop timer
+    document.getElementById(pauseID).style.display = "none";   // Hide pause button
+    document.getElementById(startID).innerHTML = "Start";      // Reset start button
+  }
+  else                        // Timer needs to be started
+  {
+    document.getElementById(startID).innerHTML = "Stop";    // Change to stop button
+    document.getElementById(pauseID).style.display = "block";  // Show pause button
+    activate_timer(startTime);  // Activate timer
+  }
+
+
 }
