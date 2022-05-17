@@ -24,6 +24,7 @@ function new_timer(numSec) {
   elemID = numSec.toString();
 
   document.getElementById(elemID + "stop").style.display = "block";
+  document.getElementById("tc" + elemID).checked = true;
 
   start_timer();
 }
@@ -82,6 +83,7 @@ function reset_timer() {
   // Hide "stop", switch to "play" arrow
   document.getElementById(elemID + "stop").style.display = "none";
   document.getElementById(elemID + "pp").innerHTML = "play_arrow";
+  document.getElementById("tc" + elemID).checked = false;
 
   // Change inner HTML for timers
   if (elemID == "1500")
@@ -90,4 +92,20 @@ function reset_timer() {
     document.getElementById(elemID).innerHTML = "05:00";
   else if (elemID == "900")
     document.getElementById(elemID).innerHTML = "15:00";
+}
+
+
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){
+      this.sound.play();
+  }
+  this.stop = function(){
+      this.sound.pause();
+  }    
 }
