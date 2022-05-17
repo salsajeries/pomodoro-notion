@@ -21,13 +21,3 @@ body {
     font-size: 25px;
     text-align: center;
 }
-
-
-#tc1500 {
-    height: 0px;
-    transition: height 0.5s;
-}
-
-#tc1500:checked {
-    height: 15px;
-}
