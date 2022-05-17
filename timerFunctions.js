@@ -1,18 +1,43 @@
 /* GLOBAL VARIABLES */
-var time = null;               // Time in seconds
-var myInterval;         // setInterval variable
-var elemID;             // ID of timer element
+var time;              // Time in seconds
+var myInterval;        // setInterval variable
+var elemID;            // ID of timer element
+
+var timerExists = false;  // Flag existing timer
+var isOn = false;         // Flag timer status
 
 
-/* ACTIVATE TIMER WITH SPECIFIED TIME */
-function activate_timer(numSec) {
+/* TOGGLE TIMER ACTION */
+function toggle_timer(numSec) {
+  if (!timerExists)   // New timer
+    new_timer(numSec);
+  else if (!isOn)     // Start timer
+    start_timer();
+  else                // Pause timer
+    pause_timer();
+}
 
-  reset_timer(elemID);    // Reset previous timer
-  
-  time = numSec;                // Set new time
-  elemID = numSec.toString();   // Set new element ID
 
-  myInterval = setInterval(update_timer, 1000);     // Countdown timer every second
+/* ACTIVATE NEW TIMER */
+function new_timer(numSec) {
+  time = numSec;
+  elemID = numSec.toString();
+
+  document.getElementById(elemID + "stop").style.display = "block";
+
+  start_timer();
+}
+
+
+/* START TIMER AT CURRENT TIME */
+function start_timer() {
+  // "time" is at current pause time
+  myInterval = setInterval(update_timer, 1000);
+
+  document.getElementById(elemID + "pp").innerHTML = "pause";
+
+  timerExists = true;
+  isOn = true;
 }
 
 
@@ -36,46 +61,33 @@ function update_timer() {
     time -= 1;  // Decrement seconds
   }
   else
-    stop_timer();
+    pause_timer();
 }
 
 
-/* STOP TIMER COUNTDOWN */
-function stop_timer() {
-  clearInterval(myInterval);  // Stop setInterval function
+/* PAUSE COUNTDOWN */
+function pause_timer() {
+  clearInterval(myInterval);
+  isOn = false;
+
+  document.getElementById(elemID + "pp").innerHTML = "play_arrow";
 }
 
 
-/* RESET TIMER TO DEFAULT VALUE */
-function reset_timer(elemID) {
-  stop_timer();  // Stop previous timer
+/* STOP AND RESET TIMER */
+function reset_timer() {
+  pause_timer();
+  timerExists = false;
 
-  // Reset to default value
+  // Hide "stop", switch to "play" arrow
+  document.getElementById(elemID + "stop").style.display = "none";
+  document.getElementById(elemID + "pp").innerHTML = "play_arrow";
+
+  // Change inner HTML for timers
   if (elemID == "1500")
     document.getElementById(elemID).innerHTML = "25:00";
   else if (elemID == "300")
     document.getElementById(elemID).innerHTML = "05:00";
-}
-
-
-function toggle_timer(startTime) {
-  
-  var id = startTime.toString();
-  var startID = id + "start";
-  var pauseID = id + "pause";
-
-  if (startTime != time && time != null)      // If timer needs to be stopped and reset
-  {
-    reset_timer(id);  // Reset and stop timer
-    document.getElementById(pauseID).style.display = "none";   // Hide pause button
-    document.getElementById(startID).innerHTML = "Start";      // Reset start button
-  }
-  else                        // Timer needs to be started
-  {
-    document.getElementById(startID).innerHTML = "Stop";    // Change to stop button
-    document.getElementById(pauseID).style.display = "block";  // Show pause button
-    activate_timer(startTime);  // Activate timer
-  }
-
-
+  else if (elemID == "900")
+    document.getElementById(elemID).innerHTML = "15:00";
 }
