@@ -61,7 +61,7 @@ function update_timer() {
     time -= 1;  // Decrement seconds
   }
   else
-    pause_timer();
+    end_timer();
 }
 
 
@@ -81,6 +81,7 @@ function reset_timer() {
 
   // Hide "stop", switch to "play" arrow
   document.getElementById(elemID + "stop").style.display = "none";
+  document.getElementById(elemID + "ppB").style.display = "block";
   document.getElementById(elemID + "pp").innerHTML = "play_arrow";
 
   // Change inner HTML for timers
@@ -90,4 +91,11 @@ function reset_timer() {
     document.getElementById(elemID).innerHTML = "05:00";
   else if (elemID == "900")
     document.getElementById(elemID).innerHTML = "15:00";
+}
+
+
+/* END TIMER */
+function end_timer() {
+  pause_timer();
+  document.getElementById(elemID + "ppB").style.display = "none";
 }
