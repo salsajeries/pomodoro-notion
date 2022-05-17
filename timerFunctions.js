@@ -24,7 +24,6 @@ function new_timer(numSec) {
   elemID = numSec.toString();
 
   document.getElementById(elemID + "stop").style.display = "block";
-  document.getElementById("tc" + elemID).checked = true;
 
   start_timer();
 }
@@ -84,7 +83,6 @@ function reset_timer() {
   document.getElementById(elemID + "stop").style.display = "none";
   document.getElementById(elemID + "ppB").style.display = "block";
   document.getElementById(elemID + "pp").innerHTML = "play_arrow";
-  document.getElementById("tc" + elemID).checked = false;
 
   // Change inner HTML for timers
   if (elemID == "1500")
@@ -96,24 +94,8 @@ function reset_timer() {
 }
 
 
-<<<<<<< HEAD
-function sound(src) {
-  this.sound = document.createElement("audio");
-  this.sound.src = src;
-  this.sound.setAttribute("preload", "auto");
-  this.sound.setAttribute("controls", "none");
-  this.sound.style.display = "none";
-  document.body.appendChild(this.sound);
-  this.play = function(){
-      this.sound.play();
-  }
-  this.stop = function(){
-      this.sound.pause();
-  }    
-=======
 /* END TIMER */
 function end_timer() {
   pause_timer();
   document.getElementById(elemID + "ppB").style.display = "none";
->>>>>>> 811dba2d82449479b827dad1c2f48f7c33220807
 }
