@@ -23,7 +23,7 @@ function new_timer(numSec) {
   time = numSec;
   elemID = numSec.toString();
 
-  document.getElementById(elemID + "stop").style.display = "block";
+  document.getElementById(elemID + "stop").style.display = "block";   // Show "stop" button
 
   start_timer();
 }
@@ -32,9 +32,9 @@ function new_timer(numSec) {
 /* START TIMER AT CURRENT TIME */
 function start_timer() {
   // "time" is at current pause time
-  myInterval = setInterval(update_timer, 1000);
+  myInterval = setInterval(update_timer, 1000);   // Start countdown from "time"
 
-  document.getElementById(elemID + "pp").innerHTML = "pause";
+  document.getElementById(elemID + "pp").innerHTML = "pause";   // Change "play" button to "pause"
 
   timerExists = true;
   isOn = true;
@@ -67,10 +67,10 @@ function update_timer() {
 
 /* PAUSE COUNTDOWN */
 function pause_timer() {
-  clearInterval(myInterval);
+  clearInterval(myInterval);    // Pause interval function
   isOn = false;
 
-  document.getElementById(elemID + "pp").innerHTML = "play_arrow";
+  document.getElementById(elemID + "pp").innerHTML = "play_arrow";    // Change "pause" button to "play"
 }
 
 
@@ -80,9 +80,9 @@ function reset_timer() {
   timerExists = false;
 
   // Hide "stop", switch to "play" arrow
-  document.getElementById(elemID + "stop").style.display = "none";
-  document.getElementById(elemID + "ppB").style.display = "block";
-  document.getElementById(elemID + "pp").innerHTML = "play_arrow";
+  document.getElementById(elemID + "stop").style.display = "none";    // Hide "stop" button
+  document.getElementById(elemID + "ppB").style.display = "block";    // Show "play" button
+  document.getElementById(elemID + "pp").innerHTML = "play_arrow";    // Change "pause" button to "play"
 
   // Change inner HTML for timers
   if (elemID == "1500")
@@ -97,5 +97,5 @@ function reset_timer() {
 /* END TIMER */
 function end_timer() {
   pause_timer();
-  document.getElementById(elemID + "ppB").style.display = "none";
+  document.getElementById(elemID + "ppB").style.display = "none";   // Hide "play" button
 }

@@ -18,58 +18,66 @@
         <!-- MAIN CONTENT -->
         <div id="mainContent">
 
+          
           <!-- POMODORO TIMER CAROUSEL -->
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" data-bs-interval="false">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
             
             <div class="carousel-inner">
+
               <div class="carousel-item active">
-                <h3>Pomodoro</h3>
-                <h1 id="1500">25:00</h1>
-                <div class="btn-group-vertical">
-                  <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="1500ppB" onclick="toggle_timer(1500)">
-                    <span class="material-symbols-outlined" id="1500pp">play_arrow</span>
-                  </button>
-                  <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="1500stop" onclick="reset_timer()" style="display: none">
-                    <span class="material-symbols-outlined">stop</span>
-                  </button>
+                <div class="d-block w-100">
+                  <h3>Pomodoro</h3>
+                  <h1 id="1500">25:00</h1>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="1500ppB" onclick="toggle_timer(1500)">
+                      <span class="material-symbols-outlined" id="1500pp">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="1500stop" onclick="reset_timer()" style="display: none">
+                      <span class="material-symbols-outlined">stop</span>
+                    </button>
+                  </div>
                 </div>
-                <br><br><br>
+              </div>
+
+
+              <div class="carousel-item">
+                <div class="d-block w-100">
+                  <h3>Short Break</h3>
+                  <h1 id="300">05:00</h1>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="300ppB" onclick="toggle_timer(300)">
+                      <span class="material-symbols-outlined" id="300pp">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="300stop" onclick="reset_timer()" style="display: none">
+                      <span class="material-symbols-outlined">stop</span>
+                    </button>
+                  </div>
+                </div>
               </div>
 
               <div class="carousel-item">
-                <h3>Short Break</h3>
-                <h1 id="300">05:00</h1>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="300ppB" onclick="toggle_timer(300)">
-                    <span class="material-symbols-outlined" id="300pp">play_arrow</span>
-                  </button>
-                  <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="300stop" onclick="reset_timer()" style="display: none">
-                    <span class="material-symbols-outlined">stop</span>
-                  </button>
+                <div class="d-block w-100">
+                  <h3>Long Break</h3>
+                  <h1 id="900">15:00</h1>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="900ppB" onclick="toggle_timer(900)">
+                      <span class="material-symbols-outlined" id="900pp">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="900stop" onclick="reset_timer()" style="display: none">
+                      <span class="material-symbols-outlined">stop</span>
+                    </button>
+                  </div>
                 </div>
-                <br><br><br>
               </div>
 
-              <div class="carousel-item">
-                <h3>Long Break</h3>
-                <h1 id="900">15:00</h1>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="900ppB" onclick="toggle_timer(900)">
-                    <span class="material-symbols-outlined" id="900pp">play_arrow</span>
-                  </button>
-                  <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="900stop" onclick="reset_timer()" style="display: none">
-                    <span class="material-symbols-outlined">stop</span>
-                  </button>
-                </div>
-                <br><br><br>
-              </div>
             </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" onclick="reset_timer()">
+            
+            <!-- Control Buttons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" onclick="reset_timer()">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" onclick="reset_timer()">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" onclick="reset_timer()">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
