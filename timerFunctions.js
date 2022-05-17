@@ -62,7 +62,7 @@ function update_timer() {
     time -= 1;  // Decrement seconds
   }
   else
-    pause_timer();
+    end_timer();
 }
 
 
@@ -82,6 +82,7 @@ function reset_timer() {
 
   // Hide "stop", switch to "play" arrow
   document.getElementById(elemID + "stop").style.display = "none";
+  document.getElementById(elemID + "ppB").style.display = "block";
   document.getElementById(elemID + "pp").innerHTML = "play_arrow";
   document.getElementById("tc" + elemID).checked = false;
 
@@ -95,6 +96,7 @@ function reset_timer() {
 }
 
 
+<<<<<<< HEAD
 function sound(src) {
   this.sound = document.createElement("audio");
   this.sound.src = src;
@@ -108,4 +110,10 @@ function sound(src) {
   this.stop = function(){
       this.sound.pause();
   }    
+=======
+/* END TIMER */
+function end_timer() {
+  pause_timer();
+  document.getElementById(elemID + "ppB").style.display = "none";
+>>>>>>> 811dba2d82449479b827dad1c2f48f7c33220807
 }
