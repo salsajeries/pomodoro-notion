@@ -90,7 +90,7 @@
           <div id="miscOptions">
             <!-- Task List Button -->
             <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
-              Task List
+              To-Do List
             </button>
             <br><br>
             <!-- Progress Bar -->
@@ -108,7 +108,7 @@
         <div class="offcanvas offcanvas-start" id="taskList">
             
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="taskListHeader">Current Tasks:</h5>
+            <h5 class="offcanvas-title" id="taskListHeader">Tasks:</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           
@@ -118,7 +118,7 @@
             <ul id="visibleTasks" style="list-style: none; padding-left: 0%;">
             </ul>
 
-            <br><hr><br>
+            <hr>
 
             <!-- HIDDEN TASKS LIST -->
             <ul id="hiddenTasks" style="display: none;">
@@ -139,7 +139,7 @@
 
                   <input type="text" class="form-control" placeholder="Enter task" id="taskV1" value="" style="background-color: transparent; border-color: transparent;">
                   
-                  <button type="button" class="btn btn-outline-light" onclick="delete_task('1')">
+                  <button type="button" class="btn btn-outline-light" onclick="delete_task('1')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
                   </button>
                 </div>
@@ -154,7 +154,7 @@
 
                   <input type="text" class="form-control" placeholder="Enter task" id="taskV2" value="" style="background-color: transparent; border-color: transparent;">
                   
-                  <button type="button" class="btn btn-outline-light" onclick="delete_task('2')">
+                  <button type="button" class="btn btn-outline-light" onclick="delete_task('2')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
                   </button>
                 </div>
@@ -169,7 +169,7 @@
 
                   <input type="text" class="form-control" placeholder="Enter task" id="taskV3" value="" style="background-color: transparent; border-color: transparent;">
                   
-                  <button type="button" class="btn btn-outline-light" onclick="delete_task('3')">
+                  <button type="button" class="btn btn-outline-light" onclick="delete_task('3')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
                   </button>
                 </div>
@@ -184,7 +184,7 @@
 
                   <input type="text" class="form-control" placeholder="Enter task" id="taskV4" value="" style="background-color: transparent; border-color: transparent;">
                   
-                  <button type="button" class="btn btn-outline-light" onclick="delete_task('4')">
+                  <button type="button" class="btn btn-outline-light" onclick="delete_task('4')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
                   </button>
                 </div>
@@ -199,7 +199,82 @@
 
                   <input type="text" class="form-control" placeholder="Enter task" id="taskV5" value="" style="background-color: transparent; border-color: transparent;">
                   
-                  <button type="button" class="btn btn-outline-light" onclick="delete_task('5')">
+                  <button type="button" class="btn btn-outline-light" onclick="delete_task('5')" style="border-color: transparent">
+                    <span class="material-symbols-outlined">close</span>
+                  </button>
+                </div>
+              </li>
+
+              <li id="task6">
+                <div class="input-group mb-3">
+                  <input type="checkbox" class="btn-check" id="checkB6" autocomplete="off" onclick="update_status('6')">
+                  <label class="btn btn-outline-danger" for="checkB6">
+                    <span class="material-symbols-outlined" id="checkV6">done</span>
+                  </label><br>
+
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV6" value="" style="background-color: transparent; border: none;">
+                  
+                  <button type="button" class="btn btn-outline-light" onclick="delete_task('6')" style="border-color: transparent">
+                    <span class="material-symbols-outlined">close</span>
+                  </button>
+                </div>
+              </li>
+
+              <li id="task7">
+                <div class="input-group mb-3">
+                  <input type="checkbox" class="btn-check" id="checkB7" autocomplete="off" onclick="update_status('7')">
+                  <label class="btn btn-outline-danger" for="checkB7">
+                    <span class="material-symbols-outlined" id="checkV7">done</span>
+                  </label><br>
+
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV7" value="" style="background-color: transparent; border: none;">
+                  
+                  <button type="button" class="btn btn-outline-light" onclick="delete_task('7')" style="border-color: transparent">
+                    <span class="material-symbols-outlined">close</span>
+                  </button>
+                </div>
+              </li>
+
+              <li id="task8">
+                <div class="input-group mb-3">
+                  <input type="checkbox" class="btn-check" id="checkB8" autocomplete="off" onclick="update_status('8')">
+                  <label class="btn btn-outline-danger" for="checkB8">
+                    <span class="material-symbols-outlined" id="checkV8">done</span>
+                  </label><br>
+
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV8" value="" style="background-color: transparent; border: none;">
+                  
+                  <button type="button" class="btn btn-outline-light" onclick="delete_task('8')" style="border-color: transparent">
+                    <span class="material-symbols-outlined">close</span>
+                  </button>
+                </div>
+              </li>
+
+              <li id="task9">
+                <div class="input-group mb-3">
+                  <input type="checkbox" class="btn-check" id="checkB9" autocomplete="off" onclick="update_status('9')">
+                  <label class="btn btn-outline-danger" for="checkB9">
+                    <span class="material-symbols-outlined" id="checkV9">done</span>
+                  </label><br>
+
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV9" value="" style="background-color: transparent; border: none;">
+                  
+                  <button type="button" class="btn btn-outline-light" onclick="delete_task('9')" style="border-color: transparent">
+                    <span class="material-symbols-outlined">close</span>
+                  </button>
+                </div>
+              </li>
+
+              <li id="task10">
+                <div class="input-group mb-3">
+                  <input type="checkbox" class="btn-check" id="checkB10" autocomplete="off" onclick="update_status('10')">
+                  <label class="btn btn-outline-danger" for="checkB10">
+                    <span class="material-symbols-outlined" id="checkV10">done</span>
+                  </label><br>
+
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV10" value="" style="background-color: transparent; border: none;">
+                  
+                  <button type="button" class="btn btn-outline-light" onclick="delete_task('10')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
                   </button>
                 </div>
@@ -209,7 +284,9 @@
 
             <!-- ADD TASK BUTTON -->
             <div style="display: flex; justify-content: center;">
-              <button class="btn btn-outline-danger" id="addButton" onclick="add_task()">Add</button>
+              <button class="btn btn-outline-danger" id="addButton" onclick="add_task()">
+                <span class="material-symbols-outlined">add</span>
+              </button>
             </div>
             
             

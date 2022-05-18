@@ -1,3 +1,12 @@
+/* 
+ID Categories:
+    task_ = <li> task number
+    checkB_ = <input> checkbox, <label> checkbox
+    checkV_ = <span> checkbox symbol value
+    taskV_ = <input> task text
+*/
+
+
 function add_task() {
     const task = document.getElementById("hiddenTasks").lastElementChild;   // Get next empty task
     const list = document.getElementById("visibleTasks");                   // Get visible list
@@ -7,18 +16,26 @@ function add_task() {
     toggle_add_button();
 }
 
-function update_status(elemID) {
-    var buttonID = "checkB" + elemID;       // Button ID
-    var symbolID = "checkV" + elemID;       // Symbol ID
 
-    const button = document.getElementById(buttonID);   // Button element
-    const symbol = document.getElementById(symbolID);   // Symbol element
-  
+function update_status(elemID) {
+    const button = document.getElementById("checkB" + elemID);   // Button element
+    const symbol = document.getElementById("checkV" + elemID);   // Symbol element
+    const task = document.getElementById("taskV" + elemID);      // Task element
+
     if (button.checked)
+    {
         symbol.innerHTML = "done_outline";  // Switch to thick checkmark
+        task.readOnly = true;
+        task.style = "transition: background .5s; background: #F8D7DA; border-color: transparent;";
+    }
     else
+    {
         symbol.innerHTML = "done";          // Switch to thin checkmark
+        task.readOnly = false;
+        task.style = "transition: background .5s; background: transparent; border-color: transparent;";
+    }
 }
+
 
 function delete_task(elemIDNum) {
     var taskID = "task" + elemIDNum;        // Task <li> ID
@@ -35,6 +52,7 @@ function delete_task(elemIDNum) {
 
     toggle_add_button();        // Show add button
 }
+
 
 function toggle_add_button() {
     const task = document.getElementById("hiddenTasks").lastElementChild;   // Read next task
