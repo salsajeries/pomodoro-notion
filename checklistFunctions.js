@@ -5,71 +5,107 @@ ID Categories:
     checkV_ = <span> checkbox symbol value
     taskV_ = <input> task text
 */
-var isEmpty = true;
-var isComplete = false;
+var visibTasks = 0;
+var completeTasks = 0;
+var progress = 0.0;
 
 
 function add_task() {
     const task = document.getElementById("hiddenTasks").lastElementChild;   // Get next empty task
     const list = document.getElementById("visibleTasks");                   // Get visible list
     
-    list.insertBefore(task, list.children[0]);                  // Insert empty task at top
+    if (visibTasks < 10)
+        list.insertBefore(task, list.children[0]);                  // Insert empty task at top
 
-    toggle_add_button();
+    visibTasks++;
+    update_list_status();
 }
 
 
-function update_status(elemID) {
+function delete_task(elemIDNum) {
+
+    const task = document.getElementById("task" + elemIDNum);   // Task <li> element
+    const list = document.getElementById("hiddenTasks");        // Get hidden list
+    list.insertBefore(task, list.children[0]);                  // Move to hidden list
+
+    // Reset task properties
+    if (document.getElementById("checkB" + elemIDNum).checked == true)  // Remove from completeTasks (if necessary)
+        completeTasks--;
+    document.getElementById("checkB" + elemIDNum).checked = false;      // Uncheck box
+    document.getElementById("checkV" + elemIDNum).innerHTML = "done";   // Reset symbol
+    document.getElementById("taskV" + elemIDNum).readOnly = false;      // Reset readOnly status
+    document.getElementById("taskV" + elemIDNum).value = "";            // Reset text value
+    document.getElementById("taskV" + elemIDNum).style = "background: transparent; border-color: transparent";      // Reset task color
+    
+
+    visibTasks--;
+    update_list_status();
+}
+
+
+function toggle_task_status(elemID) {
     const button = document.getElementById("checkB" + elemID);   // Button element
     const symbol = document.getElementById("checkV" + elemID);   // Symbol element
     const task = document.getElementById("taskV" + elemID);      // Task element
 
     if (button.checked)
     {
+        completeTasks++;
         symbol.innerHTML = "done_outline";  // Switch to thick checkmark
         task.readOnly = true;
         task.style = "transition: background .5s; background: #F8D7DA; border-color: transparent;";
     }
     else
     {
+        completeTasks--;
         symbol.innerHTML = "done";          // Switch to thin checkmark
         task.readOnly = false;
         task.style = "transition: background .5s; background: transparent; border-color: transparent;";
     }
 
-    progress_status();
-
-}
-
-
-function delete_task(elemIDNum) {
-    var taskID = "task" + elemIDNum;        // Task <li> ID
-    var buttonID = "checkB" + elemIDNum;    // Button ID
-    var valueID = "taskV" + elemIDNum;      // Task value ID
-
-    const task = document.getElementById(taskID);           // Task <li> element
-    const list = document.getElementById("hiddenTasks");    // Get hidden list
-    list.insertBefore(task, list.children[0]);      // Move to hidden list
-
-    document.getElementById(buttonID).checked = false;      // Uncheck box
-    update_status(elemIDNum);                               // Reset symbol
-    document.getElementById(valueID).value = "";            // Reset text value
-
-    toggle_add_button();        // Show add button
+    update_list_status();
 }
 
 
 function toggle_add_button() {
-    const task = document.getElementById("hiddenTasks").lastElementChild;   // Read next task
-    
-    if (!task)      // If list is empty, i.e. task is NULL
-        document.getElementById("addButton").style.display = "none";    // Hide button
+    var button = document.getElementById("addButton");
+
+    if (visibTasks < 10)        // All task elements are shown
+        button.style.display = "block";
     else
-        document.getElementById("addButton").style.display = "block";    // SHow button
+        button.style.display = "none";
 }
 
 
-function progress_status() {
-    document.getElementById("noTasks").style.display = none;
-    document.getElementById("completedTasks").style.display = none;
+function calc_progress() {
+    progress = (completeTasks / visibTasks) * 100;
+}
+
+
+function update_list_status() {
+    
+    const emptyList = document.getElementById("noTasks");
+    const doneList = document.getElementById("finishTasks");
+
+    if (visibTasks == 0)        // List is empty
+    {
+        emptyList.style.display = "block";
+        doneList.style.display = "none";
+    }
+    else if (visibTasks == completeTasks)       // All visible tasks are done
+    {
+        emptyList.style.display = "none";
+        doneList.style.display = "block";
+    }
+    else
+    {
+        emptyList.style.display = "none";
+        doneList.style.display = "none";
+    }
+
+    calc_progress();
+    toggle_add_button();
+
+    // Debugging statement
+    console.log(visibTasks + " : " + completeTasks + " = " + progress);
 }

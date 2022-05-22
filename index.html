@@ -116,10 +116,10 @@
 
             <!-- VISIBLE TASKS LIST -->
             <ul id="visibleTasks" style="list-style: none; padding-left: 0%;">
-              <li id="noTasks">
+              <li id="noTasks" style="display: block">
                 <h5><i>There are no tasks.</i></h5>
               </li>
-              <li id="completedTasks">
+              <li id="finishTasks" style="display: none">
                 <h5><i>Congratulations, you finished all your tasks!</i></h5>
               </li>
             </ul>
@@ -138,7 +138,7 @@
               -->
               <li id="task1">
                 <div class="input-group mb-3">
-                  <input type="checkbox" class="btn-check" id="checkB1" autocomplete="off" onclick="update_status('1')">
+                  <input type="checkbox" class="btn-check" id="checkB1" autocomplete="off" onclick="toggle_task_status('1')">
                   <label class="btn btn-outline-danger" for="checkB1">
                     <span class="material-symbols-outlined" id="checkV1">done</span>
                   </label><br>
@@ -153,7 +153,7 @@
               
               <li id="task2">
                 <div class="input-group mb-3">
-                  <input type="checkbox" class="btn-check" id="checkB2" autocomplete="off" onclick="update_status('2')">
+                  <input type="checkbox" class="btn-check" id="checkB2" autocomplete="off" onclick="toggle_task_status('2')">
                   <label class="btn btn-outline-danger" for="checkB2">
                     <span class="material-symbols-outlined" id="checkV2">done</span>
                   </label><br>
@@ -168,7 +168,7 @@
               
               <li id="task3">
                 <div class="input-group mb-3">
-                  <input type="checkbox" class="btn-check" id="checkB3" autocomplete="off" onclick="update_status('3')">
+                  <input type="checkbox" class="btn-check" id="checkB3" autocomplete="off" onclick="toggle_task_status('3')">
                   <label class="btn btn-outline-danger" for="checkB3">
                     <span class="material-symbols-outlined" id="checkV3">done</span>
                   </label><br>
@@ -183,7 +183,7 @@
               
               <li id="task4">
                 <div class="input-group mb-3">
-                  <input type="checkbox" class="btn-check" id="checkB4" autocomplete="off" onclick="update_status('4')">
+                  <input type="checkbox" class="btn-check" id="checkB4" autocomplete="off" onclick="toggle_task_status('4')">
                   <label class="btn btn-outline-danger" for="checkB4">
                     <span class="material-symbols-outlined" id="checkV4">done</span>
                   </label><br>
@@ -198,7 +198,7 @@
               
               <li id="task5">
                 <div class="input-group mb-3">
-                  <input type="checkbox" class="btn-check" id="checkB5" autocomplete="off" onclick="update_status('5')">
+                  <input type="checkbox" class="btn-check" id="checkB5" autocomplete="off" onclick="toggle_task_status('5')">
                   <label class="btn btn-outline-danger" for="checkB5">
                     <span class="material-symbols-outlined" id="checkV5">done</span>
                   </label><br>
@@ -213,7 +213,7 @@
 
               <li id="task6">
                 <div class="input-group mb-3">
-                  <input type="checkbox" class="btn-check" id="checkB6" autocomplete="off" onclick="update_status('6')">
+                  <input type="checkbox" class="btn-check" id="checkB6" autocomplete="off" onclick="toggle_task_status('6')">
                   <label class="btn btn-outline-danger" for="checkB6">
                     <span class="material-symbols-outlined" id="checkV6">done</span>
                   </label><br>
@@ -228,7 +228,7 @@
 
               <li id="task7">
                 <div class="input-group mb-3">
-                  <input type="checkbox" class="btn-check" id="checkB7" autocomplete="off" onclick="update_status('7')">
+                  <input type="checkbox" class="btn-check" id="checkB7" autocomplete="off" onclick="toggle_task_status('7')">
                   <label class="btn btn-outline-danger" for="checkB7">
                     <span class="material-symbols-outlined" id="checkV7">done</span>
                   </label><br>
@@ -243,7 +243,7 @@
 
               <li id="task8">
                 <div class="input-group mb-3">
-                  <input type="checkbox" class="btn-check" id="checkB8" autocomplete="off" onclick="update_status('8')">
+                  <input type="checkbox" class="btn-check" id="checkB8" autocomplete="off" onclick="toggle_task_status('8')">
                   <label class="btn btn-outline-danger" for="checkB8">
                     <span class="material-symbols-outlined" id="checkV8">done</span>
                   </label><br>
@@ -258,7 +258,7 @@
 
               <li id="task9">
                 <div class="input-group mb-3">
-                  <input type="checkbox" class="btn-check" id="checkB9" autocomplete="off" onclick="update_status('9')">
+                  <input type="checkbox" class="btn-check" id="checkB9" autocomplete="off" onclick="toggle_task_status('9')">
                   <label class="btn btn-outline-danger" for="checkB9">
                     <span class="material-symbols-outlined" id="checkV9">done</span>
                   </label><br>
@@ -273,7 +273,7 @@
 
               <li id="task10">
                 <div class="input-group mb-3">
-                  <input type="checkbox" class="btn-check" id="checkB10" autocomplete="off" onclick="update_status('10')">
+                  <input type="checkbox" class="btn-check" id="checkB10" autocomplete="off" onclick="toggle_task_status('10')">
                   <label class="btn btn-outline-danger" for="checkB10">
                     <span class="material-symbols-outlined" id="checkV10">done</span>
                   </label><br>
