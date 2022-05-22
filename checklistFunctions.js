@@ -5,6 +5,8 @@ ID Categories:
     checkV_ = <span> checkbox symbol value
     taskV_ = <input> task text
 */
+var isEmpty = true;
+var isComplete = false;
 
 
 function add_task() {
@@ -34,6 +36,9 @@ function update_status(elemID) {
         task.readOnly = false;
         task.style = "transition: background .5s; background: transparent; border-color: transparent;";
     }
+
+    progress_status();
+
 }
 
 
@@ -61,4 +66,10 @@ function toggle_add_button() {
         document.getElementById("addButton").style.display = "none";    // Hide button
     else
         document.getElementById("addButton").style.display = "block";    // SHow button
+}
+
+
+function progress_status() {
+    document.getElementById("noTasks").style.display = none;
+    document.getElementById("completedTasks").style.display = none;
 }

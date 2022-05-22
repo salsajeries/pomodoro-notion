@@ -108,7 +108,7 @@
         <div class="offcanvas offcanvas-start" id="taskList">
             
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="taskListHeader">Tasks:</h5>
+            <h2 class="offcanvas-title" id="taskListHeader">Tasks:</h2>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           
@@ -116,6 +116,12 @@
 
             <!-- VISIBLE TASKS LIST -->
             <ul id="visibleTasks" style="list-style: none; padding-left: 0%;">
+              <li id="noTasks">
+                <h5><i>There are no tasks.</i></h5>
+              </li>
+              <li id="completedTasks">
+                <h5><i>Congratulations, you finished all your tasks!</i></h5>
+              </li>
             </ul>
 
             <hr>
