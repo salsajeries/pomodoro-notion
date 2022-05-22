@@ -113,5 +113,5 @@ function update_list_status() {
     toggle_add_button();
 
     // Debugging statement
-    console.log(visibTasks + " : " + completeTasks + " = " + progress);
+    //console.log(visibTasks + " : " + completeTasks + " = " + progress);
 }
