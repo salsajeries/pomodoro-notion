@@ -11,6 +11,11 @@
         <link href="style.css" rel="stylesheet">
         <script src="timer.js"></script>
         <script src="checklistProgress.js"></script>
+
+        <!-- FAVICON -->
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
     </head>
 
     <body>
@@ -18,7 +23,6 @@
         <!-- MAIN CONTENT -->
         <div id="mainContent">
 
-          
           <!-- POMODORO TIMER CAROUSEL -->
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
             
@@ -88,6 +92,7 @@
 
           <!-- MISC OPTIONS -->
           <div id="miscOptions">
+
             <!-- Task List Button -->
             <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
               To-Do List
@@ -95,7 +100,7 @@
             <br><br>
             <!-- Progress Bar -->
             <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 25%;" sass="">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressBar">
                 0%
               </div>
             </div>

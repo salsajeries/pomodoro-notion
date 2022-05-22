@@ -78,7 +78,13 @@ function toggle_add_button() {
 
 
 function calc_progress() {
-    progress = (completeTasks / visibTasks) * 100;
+
+    progress = (completeTasks / visibTasks) * 100;      // Calculate progress percentage
+
+    const progressBar = document.getElementById("progressBar");     // Progress bar element
+    progressBar.style.width = progress.toString() + "%";            // Update width
+    progressBar.innerHTML = progress.toFixed() + "%";               // Display percentage
+    
 }
 
 
