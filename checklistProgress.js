@@ -102,6 +102,7 @@ function update_list_status() {
     {
         emptyList.style.display = "none";
         doneList.style.display = "block";
+        document.querySelector('#confetti').click();
     }
     else
     {

@@ -61,7 +61,11 @@ function update_timer() {
     time -= 1;  // Decrement seconds
   }
   else
+  {
+    document.querySelector('#confetti').click();
     end_timer();
+  }
+    
 }
 
 
