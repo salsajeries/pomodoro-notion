@@ -63,6 +63,7 @@ function update_timer() {
   else
   {
     document.querySelector('#confetti').click();
+    document.querySelector('#alarmSound').play();
     end_timer();
   }
     
