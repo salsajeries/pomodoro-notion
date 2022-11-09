@@ -46,7 +46,6 @@
                 </div>
               </div>
 
-
               <div class="carousel-item">
                 <div class="d-block w-100">
                   <h3>Short Break</h3>
@@ -96,10 +95,16 @@
           <!-- MISC OPTIONS -->
           <div id="miscOptions">
 
-            <!-- Task List Button -->
-            <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
-              To-Do List
-            </button>
+            <!-- Options Buttons -->
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
+                To-Do List
+              </button>
+              <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#spotifyOptions">
+                Spotify
+              </button>
+            </div>
+          
             <br><br>
             <!-- Progress Bar -->
             <div class="progress">
@@ -115,6 +120,22 @@
             <source src="sounds/timer-alarm.mp3">
           </audio>
 
+        </div>
+
+
+        <!-- Spotify Modal -->
+        <div class="modal fade" id="spotifyOptions" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #252428; color: white">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Spotify</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/25YbpOi19sVG0JKSDWt3Uo?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+            </div>
+          </div>
         </div>
 
 
