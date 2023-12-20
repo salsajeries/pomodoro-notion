@@ -53,14 +53,14 @@ function toggle_task_status(elemID) {
         completeTasks++;
         symbol.innerHTML = "done_outline";  // Switch to thick checkmark
         task.readOnly = true;
-        task.style = "transition: background .5s; background: #F8D7DA; border-color: transparent;";
+        task.style = "transition: background .5s; background: #222b26; border-color: transparent; color: white";
     }
     else
     {
         completeTasks--;
         symbol.innerHTML = "done";          // Switch to thin checkmark
         task.readOnly = false;
-        task.style = "transition: background .5s; background: transparent; border-color: transparent;";
+        task.style = "transition: background .5s; background: transparent; border-color: transparent; color: white";
     }
 
     update_list_status();

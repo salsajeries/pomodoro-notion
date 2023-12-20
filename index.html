@@ -36,10 +36,10 @@
                   <h3>Pomodoro</h3>
                   <h1 id="1500">25:00</h1>
                   <div class="btn-group">
-                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="1500ppB" onclick="toggle_timer(1500)">
+                    <button type="button" class="btn btn-outline-light btn-sm rounded-0" id="1500ppB" onclick="toggle_timer(1500)">
                       <span class="material-symbols-outlined" id="1500pp">play_arrow</span>
                     </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="1500stop" onclick="reset_timer()" style="display: none">
+                    <button type="button" class="btn btn-outline-light btn-sm rounded-0" id="1500stop" onclick="reset_timer()" style="display: none">
                       <span class="material-symbols-outlined">stop</span>
                     </button>
                   </div>
@@ -51,10 +51,10 @@
                   <h3>Short Break</h3>
                   <h1 id="300">05:00</h1>
                   <div class="btn-group">
-                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="300ppB" onclick="toggle_timer(300)">
+                    <button type="button" class="btn btn-outline-light btn-sm rounded-0" id="300ppB" onclick="toggle_timer(300)">
                       <span class="material-symbols-outlined" id="300pp">play_arrow</span>
                     </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="300stop" onclick="reset_timer()" style="display: none">
+                    <button type="button" class="btn btn-outline-light btn-sm rounded-0" id="300stop" onclick="reset_timer()" style="display: none">
                       <span class="material-symbols-outlined">stop</span>
                     </button>
                   </div>
@@ -66,10 +66,10 @@
                   <h3>Long Break</h3>
                   <h1 id="900">15:00</h1>
                   <div class="btn-group">
-                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="900ppB" onclick="toggle_timer(900)">
+                    <button type="button" class="btn btn-outline-light btn-sm rounded-0" id="900ppB" onclick="toggle_timer(900)">
                       <span class="material-symbols-outlined" id="900pp">play_arrow</span>
                     </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm rounded-0" id="900stop" onclick="reset_timer()" style="display: none">
+                    <button type="button" class="btn btn-outline-light btn-sm rounded-0" id="900stop" onclick="reset_timer()" style="display: none">
                       <span class="material-symbols-outlined">stop</span>
                     </button>
                   </div>
@@ -97,10 +97,10 @@
 
             <!-- Options Buttons -->
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
-                To-Do List
+              <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#taskList" aria-controls="offcanvasExample">
+                Tasks
               </button>
-              <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#spotifyOptions">
+              <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#spotifyOptions">
                 Spotify
               </button>
             </div>
@@ -108,7 +108,7 @@
             <br><br>
             <!-- Progress Bar -->
             <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressBar">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressBar">
                 0%
               </div>
             </div>
@@ -126,7 +126,7 @@
         <!-- Spotify Modal -->
         <div class="modal fade" id="spotifyOptions" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
-            <div class="modal-content" style="background-color: #252428; color: white">
+            <div class="modal-content" style="background-color: #202124; color: white">
               <div class="modal-header">
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Spotify</h1>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -140,7 +140,7 @@
 
 
         <!-- OFFCANVAS CONTENT -->
-        <div class="offcanvas offcanvas-start" id="taskList">
+        <div class="offcanvas offcanvas-start" id="taskList" style="background-color: #202124; color: white">
             
           <div class="offcanvas-header">
             <h2 class="offcanvas-title" id="taskListHeader">Tasks:</h2>
@@ -174,11 +174,11 @@
               <li id="task1">
                 <div class="input-group mb-3">
                   <input type="checkbox" class="btn-check" id="checkB1" autocomplete="off" onclick="toggle_task_status('1')">
-                  <label class="btn btn-outline-danger" for="checkB1">
+                  <label class="btn btn-outline-light" for="checkB1">
                     <span class="material-symbols-outlined" id="checkV1">done</span>
                   </label><br>
 
-                  <input type="text" class="form-control" placeholder="Enter task" id="taskV1" value="" style="background-color: transparent; border-color: transparent;">
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV1" value="" style="background-color: transparent; border-color: transparent; color: white">
                   
                   <button type="button" class="btn btn-outline-light" onclick="delete_task('1')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
@@ -189,11 +189,11 @@
               <li id="task2">
                 <div class="input-group mb-3">
                   <input type="checkbox" class="btn-check" id="checkB2" autocomplete="off" onclick="toggle_task_status('2')">
-                  <label class="btn btn-outline-danger" for="checkB2">
+                  <label class="btn btn-outline-light" for="checkB2">
                     <span class="material-symbols-outlined" id="checkV2">done</span>
                   </label><br>
 
-                  <input type="text" class="form-control" placeholder="Enter task" id="taskV2" value="" style="background-color: transparent; border-color: transparent;">
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV2" value="" style="background-color: transparent; border-color: transparent; color: white">
                   
                   <button type="button" class="btn btn-outline-light" onclick="delete_task('2')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
@@ -204,11 +204,11 @@
               <li id="task3">
                 <div class="input-group mb-3">
                   <input type="checkbox" class="btn-check" id="checkB3" autocomplete="off" onclick="toggle_task_status('3')">
-                  <label class="btn btn-outline-danger" for="checkB3">
+                  <label class="btn btn-outline-light" for="checkB3">
                     <span class="material-symbols-outlined" id="checkV3">done</span>
                   </label><br>
 
-                  <input type="text" class="form-control" placeholder="Enter task" id="taskV3" value="" style="background-color: transparent; border-color: transparent;">
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV3" value="" style="background-color: transparent; border-color: transparent; color: white">
                   
                   <button type="button" class="btn btn-outline-light" onclick="delete_task('3')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
@@ -219,11 +219,11 @@
               <li id="task4">
                 <div class="input-group mb-3">
                   <input type="checkbox" class="btn-check" id="checkB4" autocomplete="off" onclick="toggle_task_status('4')">
-                  <label class="btn btn-outline-danger" for="checkB4">
+                  <label class="btn btn-outline-light" for="checkB4">
                     <span class="material-symbols-outlined" id="checkV4">done</span>
                   </label><br>
 
-                  <input type="text" class="form-control" placeholder="Enter task" id="taskV4" value="" style="background-color: transparent; border-color: transparent;">
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV4" value="" style="background-color: transparent; border-color: transparent; color: white">
                   
                   <button type="button" class="btn btn-outline-light" onclick="delete_task('4')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
@@ -234,11 +234,11 @@
               <li id="task5">
                 <div class="input-group mb-3">
                   <input type="checkbox" class="btn-check" id="checkB5" autocomplete="off" onclick="toggle_task_status('5')">
-                  <label class="btn btn-outline-danger" for="checkB5">
+                  <label class="btn btn-outline-light" for="checkB5">
                     <span class="material-symbols-outlined" id="checkV5">done</span>
                   </label><br>
 
-                  <input type="text" class="form-control" placeholder="Enter task" id="taskV5" value="" style="background-color: transparent; border-color: transparent;">
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV5" value="" style="background-color: transparent; border-color: transparent; color: white">
                   
                   <button type="button" class="btn btn-outline-light" onclick="delete_task('5')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
@@ -249,11 +249,11 @@
               <li id="task6">
                 <div class="input-group mb-3">
                   <input type="checkbox" class="btn-check" id="checkB6" autocomplete="off" onclick="toggle_task_status('6')">
-                  <label class="btn btn-outline-danger" for="checkB6">
+                  <label class="btn btn-outline-light" for="checkB6">
                     <span class="material-symbols-outlined" id="checkV6">done</span>
                   </label><br>
 
-                  <input type="text" class="form-control" placeholder="Enter task" id="taskV6" value="" style="background-color: transparent; border: none;">
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV6" value="" style="background-color: transparent; border-color: transparent; color: white">
                   
                   <button type="button" class="btn btn-outline-light" onclick="delete_task('6')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
@@ -264,11 +264,11 @@
               <li id="task7">
                 <div class="input-group mb-3">
                   <input type="checkbox" class="btn-check" id="checkB7" autocomplete="off" onclick="toggle_task_status('7')">
-                  <label class="btn btn-outline-danger" for="checkB7">
+                  <label class="btn btn-outline-light" for="checkB7">
                     <span class="material-symbols-outlined" id="checkV7">done</span>
                   </label><br>
 
-                  <input type="text" class="form-control" placeholder="Enter task" id="taskV7" value="" style="background-color: transparent; border: none;">
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV7" value="" style="background-color: transparent; border-color: transparent; color: white">
                   
                   <button type="button" class="btn btn-outline-light" onclick="delete_task('7')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
@@ -279,11 +279,11 @@
               <li id="task8">
                 <div class="input-group mb-3">
                   <input type="checkbox" class="btn-check" id="checkB8" autocomplete="off" onclick="toggle_task_status('8')">
-                  <label class="btn btn-outline-danger" for="checkB8">
+                  <label class="btn btn-outline-light" for="checkB8">
                     <span class="material-symbols-outlined" id="checkV8">done</span>
                   </label><br>
 
-                  <input type="text" class="form-control" placeholder="Enter task" id="taskV8" value="" style="background-color: transparent; border: none;">
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV8" value="" style="background-color: transparent; border-color: transparent; color: white">
                   
                   <button type="button" class="btn btn-outline-light" onclick="delete_task('8')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
@@ -294,11 +294,11 @@
               <li id="task9">
                 <div class="input-group mb-3">
                   <input type="checkbox" class="btn-check" id="checkB9" autocomplete="off" onclick="toggle_task_status('9')">
-                  <label class="btn btn-outline-danger" for="checkB9">
+                  <label class="btn btn-outline-light" for="checkB9">
                     <span class="material-symbols-outlined" id="checkV9">done</span>
                   </label><br>
 
-                  <input type="text" class="form-control" placeholder="Enter task" id="taskV9" value="" style="background-color: transparent; border: none;">
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV9" value="" style="background-color: transparent; border-color: transparent; color: white">
                   
                   <button type="button" class="btn btn-outline-light" onclick="delete_task('9')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
@@ -309,11 +309,11 @@
               <li id="task10">
                 <div class="input-group mb-3">
                   <input type="checkbox" class="btn-check" id="checkB10" autocomplete="off" onclick="toggle_task_status('10')">
-                  <label class="btn btn-outline-danger" for="checkB10">
+                  <label class="btn btn-outline-light" for="checkB10">
                     <span class="material-symbols-outlined" id="checkV10">done</span>
                   </label><br>
 
-                  <input type="text" class="form-control" placeholder="Enter task" id="taskV10" value="" style="background-color: transparent; border: none;">
+                  <input type="text" class="form-control" placeholder="Enter task" id="taskV10" value="" style="background-color: transparent; border-color: transparent; color: white">
                   
                   <button type="button" class="btn btn-outline-light" onclick="delete_task('10')" style="border-color: transparent">
                     <span class="material-symbols-outlined">close</span>
@@ -325,7 +325,7 @@
 
             <!-- ADD TASK BUTTON -->
             <div style="display: flex; justify-content: center;">
-              <button class="btn btn-outline-danger" id="addButton" onclick="add_task()">
+              <button class="btn btn-outline-light" id="addButton" onclick="add_task()">
                 <span class="material-symbols-outlined">add</span>
               </button>
             </div>
@@ -333,33 +333,6 @@
           </div>
 
         </div>
-
-        
-
-        <!-- FIREBASE SERVICES -->
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-analytics.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyCw1m5HHrGVVnaqdot0qwOkTejNTsMVizY",
-              authDomain: "pomodoro-notion.firebaseapp.com",
-              projectId: "pomodoro-notion",
-              storageBucket: "pomodoro-notion.appspot.com",
-              messagingSenderId: "877719130037",
-              appId: "1:877719130037:web:38fc278c015d3465a113fc",
-              measurementId: "G-QH93SM85K0"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-        </script>
 
     </body>
 
